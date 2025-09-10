@@ -1,0 +1,17 @@
+[build]
+macro = false
+
+# Keep Node builtins external and avoid Bun APIs at runtime.
+external = [
+  "node:*",
+  "fs",
+  "path",
+  "os",
+  "child_process",
+  "crypto",
+  "readline",
+  "stream",
+  "zlib",
+  "tty"
+]
+

@@ -1,0 +1,28 @@
+{
+  "name": "qix-fix",
+  "version": "3.0.3",
+  "type": "module",
+  "description": "Supply-chain scanner: lockfile checks, code detectors, cache scans.",
+  "bin": {
+    "qix-fix": "dist/cli.js"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "scripts": {
+    "build": "bun build ./src/cli.ts --target=node --format=esm --outdir=dist --sourcemap=inline",
+    "dev": "bun build ./src/cli.ts --target=node --format=esm --outdir=dist --watch",
+    "test": "bun test",
+    "typecheck": "tsc",
+    "format": "biome format --write .",
+    "lint": "biome lint ."
+  },
+  "dependencies": {
+    "@hyrious/bun.lockb": "npm:@socketregistry/hyrious__bun.lockb@^1"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "^2.2.3",
+    "@types/node": "^22.10.1",
+    "typescript": "^5.9.2"
+  }
+}
