@@ -22,7 +22,7 @@ export class TUI {
 
     // Try tput if available
     try {
-      const { execSync } = require("child_process");
+      const { execSync } = require("node:child_process");
       const result = execSync("tput cols", { encoding: "utf8", timeout: 1000 });
       const parsed = parseInt(result.trim(), 10);
       if (!Number.isNaN(parsed) && parsed > 0) return parsed;

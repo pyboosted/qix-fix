@@ -88,8 +88,11 @@ function main() {
         threatened.sort((a, b) => a.localeCompare(b));
         const rev = buildReverseIndex(edgesAll);
         for (const name of threatened) {
-          const t = threatIndex.get(name)!;
-          const versions = Array.from(aggregate.get(name)!).sort((a, b) => compare(a, b));
+          const threat = threatIndex.get(name);
+          if (!threat) continue;
+          const versionsSet = aggregate.get(name);
+          if (!versionsSet || versionsSet.size === 0) continue;
+          const versions = Array.from(versionsSet).sort((a, b) => compare(a, b));
           const pinnedTo = getPinnedVersion(pkg, name);
 
           // Build occurrence details from edges: version -> parents
@@ -98,10 +101,14 @@ function main() {
           for (const e of edgesAll) {
             if (e.childName !== name) continue;
             if (e.childVersion && details.has(e.childVersion)) {
-              details.get(e.childVersion)!.add(`${e.parentName}@${e.parentVersion}`);
+              const bucket = details.get(e.childVersion);
+              if (bucket) bucket.add(`${e.parentName}@${e.parentVersion}`);
             } else if (!e.childVersion) {
               // version unknown (e.g., yarn ranges) — attribute to all versions present
-              for (const v of versions) details.get(v)!.add(`${e.parentName}@${e.parentVersion}`);
+              for (const v of versions) {
+                const bucket = details.get(v);
+                if (bucket) bucket.add(`${e.parentName}@${e.parentVersion}`);
+              }
             }
           }
 
@@ -114,7 +121,7 @@ function main() {
           console.log(`${head}${multiTag}:`);
           for (const v of versions) {
             const badRanges =
-              t.badRanges?.filter((r) => {
+              threat.badRanges?.filter((r) => {
                 try {
                   return satisfies(v, r);
                 } catch {
@@ -150,13 +157,14 @@ function main() {
         const recommended: Record<string, string> = {};
         const noSafe: string[] = [];
         for (const name of threatened) {
-          const t = threatIndex.get(name)!;
+          const threat = threatIndex.get(name);
+          if (!threat) continue;
           const pinnedTo = getPinnedVersion(pkg, name);
           if (pinnedTo) continue; // already pinned
-          const versions = Array.from(aggregate.get(name) || []);
+          const versions = Array.from(aggregate.get(name) ?? new Set<string>());
           const safe = versions.filter(
             (v) =>
-              !t.badRanges?.some((r) => {
+              !threat.badRanges?.some((r) => {
                 try {
                   return satisfies(v, r);
                 } catch {
@@ -175,7 +183,7 @@ function main() {
         if (recKeys.length) {
           // Show which packages have multiple versions (warning)
           const multiVersionPackages = recKeys.filter((name) => {
-            const versions = Array.from(aggregate.get(name) || []);
+            const versions = Array.from(aggregate.get(name) ?? new Set<string>());
             return versions.length > 1;
           });
 
@@ -218,9 +226,7 @@ function main() {
         }
         if (noSafe.length) {
           console.warn(
-            "\nNo safe version present in your lock for: " +
-              noSafe.join(", ") +
-              ". Consider upgrading dependencies that bring them in.",
+            `\nNo safe version present in your lock for: ${noSafe.join(", ")}. Consider upgrading dependencies that bring them in.`,
           );
         }
       })();
@@ -321,7 +327,7 @@ function main() {
             }
             if (!cols) {
               try {
-                const { execSync } = require("child_process");
+                const { execSync } = require("node:child_process");
                 const result = execSync("tput cols", { encoding: "utf8", timeout: 1000 });
                 const parsed = parseInt(result.trim(), 10);
                 if (!Number.isNaN(parsed) && parsed > 0) cols = parsed;
@@ -390,7 +396,7 @@ function main() {
             }
             if (!cols) {
               try {
-                const { execSync } = require("child_process");
+                const { execSync } = require("node:child_process");
                 const result = execSync("tput cols", { encoding: "utf8", timeout: 1000 });
                 const parsed = parseInt(result.trim(), 10);
                 if (!Number.isNaN(parsed) && parsed > 0) cols = parsed;
@@ -477,7 +483,7 @@ function main() {
           }
           if (!cols) {
             try {
-              const { execSync } = require("child_process");
+              const { execSync } = require("node:child_process");
               const result = execSync("tput cols", { encoding: "utf8", timeout: 1000 });
               const parsed = parseInt(result.trim(), 10);
               if (!Number.isNaN(parsed) && parsed > 0) cols = parsed;
@@ -541,7 +547,7 @@ function main() {
           }
           if (!cols) {
             try {
-              const { execSync } = require("child_process");
+              const { execSync } = require("node:child_process");
               const result = execSync("tput cols", { encoding: "utf8", timeout: 1000 });
               const parsed = parseInt(result.trim(), 10);
               if (!Number.isNaN(parsed) && parsed > 0) cols = parsed;
@@ -626,7 +632,8 @@ function _inferParent(
     const m = it.pathHint.match(/node_modules\/(.+)\/node_modules\/[^/]+$/);
     if (m) {
       const parentPath = m[1];
-      const parentName = parentPath.split("/").pop()!;
+      const parentParts = parentPath.split("/");
+      const parentName = parentParts[parentParts.length - 1] ?? parentPath;
       const parentEntry = items.find((x) => x.pathHint === `node_modules/${parentPath}`);
       if (parentEntry) return `${parentName}@${parentEntry.version}`;
       return parentName;

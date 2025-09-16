@@ -162,6 +162,391 @@ export const threats: ThreatEntry[] = [
       "Malicious code to interfere with cryptocoin transactions - compromised through phishing attack",
     advisoryUrl: "https://github.com/duckdb/duckdb-node/security/advisories/GHSA-w62p-hx95-gf2c",
   },
+  // Tinycolor campaign - September 2025
+  {
+    name: "angulartics2",
+    badRanges: ["14.1.2"],
+    lastSafe: "14.1.0",
+    notes:
+      "Trojanized in the @ctrl/tinycolor supply-chain campaign (September 2025); revert to prior known-good release and rotate tokens if installed.",
+    advisoryUrl: "https://socket.dev/blog/tinycolor-supply-chain-attack-affects-40-packages",
+  },
+  {
+    name: "@ctrl/deluge",
+    badRanges: ["7.2.2"],
+    lastSafe: "7.2.0",
+    notes:
+      "Trojanized in the @ctrl/tinycolor supply-chain campaign (September 2025); revert to prior known-good release and rotate tokens if installed.",
+    advisoryUrl: "https://socket.dev/blog/tinycolor-supply-chain-attack-affects-40-packages",
+  },
+  {
+    name: "@ctrl/golang-template",
+    badRanges: ["1.4.3"],
+    lastSafe: "1.4.1",
+    notes:
+      "Trojanized in the @ctrl/tinycolor supply-chain campaign (September 2025); revert to prior known-good release and rotate tokens if installed.",
+    advisoryUrl: "https://socket.dev/blog/tinycolor-supply-chain-attack-affects-40-packages",
+  },
+  {
+    name: "@ctrl/magnet-link",
+    badRanges: ["4.0.4"],
+    lastSafe: "4.0.2",
+    notes:
+      "Trojanized in the @ctrl/tinycolor supply-chain campaign (September 2025); revert to prior known-good release and rotate tokens if installed.",
+    advisoryUrl: "https://socket.dev/blog/tinycolor-supply-chain-attack-affects-40-packages",
+  },
+  {
+    name: "@ctrl/ngx-codemirror",
+    badRanges: ["7.0.2"],
+    lastSafe: "7.0.0",
+    notes:
+      "Trojanized in the @ctrl/tinycolor supply-chain campaign (September 2025); revert to prior known-good release and rotate tokens if installed.",
+    advisoryUrl: "https://socket.dev/blog/tinycolor-supply-chain-attack-affects-40-packages",
+  },
+  {
+    name: "@ctrl/ngx-csv",
+    badRanges: ["6.0.2"],
+    lastSafe: "6.0.0",
+    notes:
+      "Trojanized in the @ctrl/tinycolor supply-chain campaign (September 2025); revert to prior known-good release and rotate tokens if installed.",
+    advisoryUrl: "https://socket.dev/blog/tinycolor-supply-chain-attack-affects-40-packages",
+  },
+  {
+    name: "@ctrl/ngx-emoji-mart",
+    badRanges: ["9.2.2"],
+    lastSafe: "9.2.0",
+    notes:
+      "Trojanized in the @ctrl/tinycolor supply-chain campaign (September 2025); revert to prior known-good release and rotate tokens if installed.",
+    advisoryUrl: "https://socket.dev/blog/tinycolor-supply-chain-attack-affects-40-packages",
+  },
+  {
+    name: "@ctrl/ngx-rightclick",
+    badRanges: ["4.0.2"],
+    lastSafe: "4.0.0",
+    notes:
+      "Trojanized in the @ctrl/tinycolor supply-chain campaign (September 2025); revert to prior known-good release and rotate tokens if installed.",
+    advisoryUrl: "https://socket.dev/blog/tinycolor-supply-chain-attack-affects-40-packages",
+  },
+  {
+    name: "@ctrl/qbittorrent",
+    badRanges: ["9.7.2"],
+    lastSafe: "9.7.0",
+    notes:
+      "Trojanized in the @ctrl/tinycolor supply-chain campaign (September 2025); revert to prior known-good release and rotate tokens if installed.",
+    advisoryUrl: "https://socket.dev/blog/tinycolor-supply-chain-attack-affects-40-packages",
+  },
+  {
+    name: "@ctrl/react-adsense",
+    badRanges: ["2.0.2"],
+    lastSafe: "2.0.0",
+    notes:
+      "Trojanized in the @ctrl/tinycolor supply-chain campaign (September 2025); revert to prior known-good release and rotate tokens if installed.",
+    advisoryUrl: "https://socket.dev/blog/tinycolor-supply-chain-attack-affects-40-packages",
+  },
+  {
+    name: "@ctrl/shared-torrent",
+    badRanges: ["6.3.2"],
+    lastSafe: "6.3.0",
+    notes:
+      "Trojanized in the @ctrl/tinycolor supply-chain campaign (September 2025); revert to prior known-good release and rotate tokens if installed.",
+    advisoryUrl: "https://socket.dev/blog/tinycolor-supply-chain-attack-affects-40-packages",
+  },
+  {
+    name: "@ctrl/tinycolor",
+    badRanges: ["4.1.2", "4.1.1"],
+    lastSafe: "4.2.0",
+    notes:
+      "Trojanized in the @ctrl/tinycolor supply-chain campaign (September 2025); revert to prior known-good release and rotate tokens if installed.",
+    advisoryUrl: "https://socket.dev/blog/tinycolor-supply-chain-attack-affects-40-packages",
+  },
+  {
+    name: "@ctrl/torrent-file",
+    badRanges: ["4.1.2"],
+    lastSafe: "4.1.0",
+    notes:
+      "Trojanized in the @ctrl/tinycolor supply-chain campaign (September 2025); revert to prior known-good release and rotate tokens if installed.",
+    advisoryUrl: "https://socket.dev/blog/tinycolor-supply-chain-attack-affects-40-packages",
+  },
+  {
+    name: "@ctrl/transmission",
+    badRanges: ["7.3.1"],
+    lastSafe: "7.3.0",
+    notes:
+      "Trojanized in the @ctrl/tinycolor supply-chain campaign (September 2025); revert to prior known-good release and rotate tokens if installed.",
+    advisoryUrl: "https://socket.dev/blog/tinycolor-supply-chain-attack-affects-40-packages",
+  },
+  {
+    name: "@ctrl/ts-base32",
+    badRanges: ["4.0.2"],
+    lastSafe: "4.0.0",
+    notes:
+      "Trojanized in the @ctrl/tinycolor supply-chain campaign (September 2025); revert to prior known-good release and rotate tokens if installed.",
+    advisoryUrl: "https://socket.dev/blog/tinycolor-supply-chain-attack-affects-40-packages",
+  },
+  {
+    name: "encounter-playground",
+    badRanges: ["0.0.5"],
+    lastSafe: "0.0.4",
+    notes:
+      "Trojanized in the @ctrl/tinycolor supply-chain campaign (September 2025); revert to prior known-good release and rotate tokens if installed.",
+    advisoryUrl: "https://socket.dev/blog/tinycolor-supply-chain-attack-affects-40-packages",
+  },
+  {
+    name: "fast.unique",
+    badRanges: ["0.2.3", "0.2.1"],
+    lastSafe: "0.0.0",
+    notes:
+      "Typosquatted package created for the @ctrl/tinycolor campaign; remove entirely and audit systems for unauthorized publishes.",
+    advisoryUrl: "https://socket.dev/blog/tinycolor-supply-chain-attack-affects-40-packages",
+  },
+  {
+    name: "graphql-depth-limit",
+    badRanges: ["1.2.1", "1.2.0"],
+    lastSafe: "1.1.0",
+    notes:
+      "Trojanized in the @ctrl/tinycolor supply-chain campaign (September 2025); revert to prior known-good release and rotate tokens if installed.",
+    advisoryUrl: "https://socket.dev/blog/tinycolor-supply-chain-attack-affects-40-packages",
+  },
+  {
+    name: "json-rules-engine-simplified",
+    badRanges: ["0.2.4", "0.2.1"],
+    lastSafe: "0.2.3",
+    notes:
+      "Trojanized in the @ctrl/tinycolor supply-chain campaign (September 2025); revert to prior known-good release and rotate tokens if installed.",
+    advisoryUrl: "https://socket.dev/blog/tinycolor-supply-chain-attack-affects-40-packages",
+  },
+  {
+    name: "jsonlint",
+    badRanges: ["1.6.4", "1.6.3"],
+    lastSafe: "1.6.2",
+    notes:
+      "Trojanized in the @ctrl/tinycolor supply-chain campaign (September 2025); revert to prior known-good release and rotate tokens if installed.",
+    advisoryUrl: "https://socket.dev/blog/tinycolor-supply-chain-attack-affects-40-packages",
+  },
+  {
+    name: "koa2-swagger-ui",
+    badRanges: ["5.11.2", "5.11.1"],
+    lastSafe: "5.11.0",
+    notes:
+      "Trojanized in the @ctrl/tinycolor supply-chain campaign (September 2025); revert to prior known-good release and rotate tokens if installed.",
+    advisoryUrl: "https://socket.dev/blog/tinycolor-supply-chain-attack-affects-40-packages",
+  },
+  {
+    name: "ngx-color",
+    badRanges: ["10.0.2"],
+    lastSafe: "10.0.0",
+    notes:
+      "Trojanized in the @ctrl/tinycolor supply-chain campaign (September 2025); revert to prior known-good release and rotate tokens if installed.",
+    advisoryUrl: "https://socket.dev/blog/tinycolor-supply-chain-attack-affects-40-packages",
+  },
+  {
+    name: "ngx-toastr",
+    badRanges: ["19.0.2"],
+    lastSafe: "19.0.0",
+    notes:
+      "Trojanized in the @ctrl/tinycolor supply-chain campaign (September 2025); revert to prior known-good release and rotate tokens if installed.",
+    advisoryUrl: "https://socket.dev/blog/tinycolor-supply-chain-attack-affects-40-packages",
+  },
+  {
+    name: "ngx-trend",
+    badRanges: ["8.0.1"],
+    lastSafe: "8.0.0",
+    notes:
+      "Trojanized in the @ctrl/tinycolor supply-chain campaign (September 2025); revert to prior known-good release and rotate tokens if installed.",
+    advisoryUrl: "https://socket.dev/blog/tinycolor-supply-chain-attack-affects-40-packages",
+  },
+  {
+    name: "react-complaint-image",
+    badRanges: ["0.0.35"],
+    lastSafe: "0.0.34",
+    notes:
+      "Trojanized in the @ctrl/tinycolor supply-chain campaign (September 2025); revert to prior known-good release and rotate tokens if installed.",
+    advisoryUrl: "https://socket.dev/blog/tinycolor-supply-chain-attack-affects-40-packages",
+  },
+  {
+    name: "react-jsonschema-form-conditionals",
+    badRanges: ["0.3.21"],
+    lastSafe: "0.3.20",
+    notes:
+      "Trojanized in the @ctrl/tinycolor supply-chain campaign (September 2025); revert to prior known-good release and rotate tokens if installed.",
+    advisoryUrl: "https://socket.dev/blog/tinycolor-supply-chain-attack-affects-40-packages",
+  },
+  {
+    name: "react-jsonschema-form-extras",
+    badRanges: ["1.0.4"],
+    lastSafe: "1.0.3",
+    notes:
+      "Trojanized in the @ctrl/tinycolor supply-chain campaign (September 2025); revert to prior known-good release and rotate tokens if installed.",
+    advisoryUrl: "https://socket.dev/blog/tinycolor-supply-chain-attack-affects-40-packages",
+  },
+  {
+    name: "rxnt-authentication",
+    badRanges: ["0.0.6"],
+    lastSafe: "0.0.5",
+    notes:
+      "Trojanized in the @ctrl/tinycolor supply-chain campaign (September 2025); revert to prior known-good release and rotate tokens if installed.",
+    advisoryUrl: "https://socket.dev/blog/tinycolor-supply-chain-attack-affects-40-packages",
+  },
+  {
+    name: "rxnt-healthchecks-nestjs",
+    badRanges: ["1.0.5"],
+    lastSafe: "1.0.4",
+    notes:
+      "Trojanized in the @ctrl/tinycolor supply-chain campaign (September 2025); revert to prior known-good release and rotate tokens if installed.",
+    advisoryUrl: "https://socket.dev/blog/tinycolor-supply-chain-attack-affects-40-packages",
+  },
+  {
+    name: "rxnt-kue",
+    badRanges: ["1.0.7"],
+    lastSafe: "1.0.6",
+    notes:
+      "Trojanized in the @ctrl/tinycolor supply-chain campaign (September 2025); revert to prior known-good release and rotate tokens if installed.",
+    advisoryUrl: "https://socket.dev/blog/tinycolor-supply-chain-attack-affects-40-packages",
+  },
+  {
+    name: "searchjs",
+    badRanges: ["0.13.1", "0.13.0"],
+    lastSafe: "1.1.2",
+    notes:
+      "Trojanized in the @ctrl/tinycolor supply-chain campaign (September 2025); revert to prior known-good release and rotate tokens if installed.",
+    advisoryUrl: "https://socket.dev/blog/tinycolor-supply-chain-attack-affects-40-packages",
+  },
+  {
+    name: "source-map-resolve",
+    badRanges: ["0.6.1", "0.6.0"],
+    lastSafe: "0.5.3",
+    notes:
+      "Trojanized in the @ctrl/tinycolor supply-chain campaign (September 2025); revert to prior known-good release and rotate tokens if installed.",
+    advisoryUrl: "https://socket.dev/blog/tinycolor-supply-chain-attack-affects-40-packages",
+  },
+  {
+    name: "string-kit",
+    badRanges: ["0.17.6", "0.17.5"],
+    lastSafe: "0.19.3",
+    notes:
+      "Trojanized in the @ctrl/tinycolor supply-chain campaign (September 2025); revert to prior known-good release and rotate tokens if installed.",
+    advisoryUrl: "https://socket.dev/blog/tinycolor-supply-chain-attack-affects-40-packages",
+  },
+  {
+    name: "styles",
+    badRanges: ["0.7.4", "0.7.3"],
+    lastSafe: "0.7.2",
+    notes:
+      "Trojanized in the @ctrl/tinycolor supply-chain campaign (September 2025); revert to prior known-good release and rotate tokens if installed.",
+    advisoryUrl: "https://socket.dev/blog/tinycolor-supply-chain-attack-affects-40-packages",
+  },
+  {
+    name: "swc-plugin-component-annotate",
+    badRanges: ["1.9.2"],
+    lastSafe: "1.9.0",
+    notes:
+      "Trojanized in the @ctrl/tinycolor supply-chain campaign (September 2025); revert to prior known-good release and rotate tokens if installed.",
+    advisoryUrl: "https://socket.dev/blog/tinycolor-supply-chain-attack-affects-40-packages",
+  },
+  {
+    name: "ts-gaussian",
+    badRanges: ["3.0.6"],
+    lastSafe: "3.0.4",
+    notes:
+      "Trojanized in the @ctrl/tinycolor supply-chain campaign (September 2025); revert to prior known-good release and rotate tokens if installed.",
+    advisoryUrl: "https://socket.dev/blog/tinycolor-supply-chain-attack-affects-40-packages",
+  },
+  {
+    name: "twin.macro",
+    badRanges: ["3.4.0"],
+    lastSafe: "3.4.1",
+    notes:
+      "Trojanized in the @ctrl/tinycolor supply-chain campaign (September 2025); revert to prior known-good release and rotate tokens if installed.",
+    advisoryUrl: "https://socket.dev/blog/tinycolor-supply-chain-attack-affects-40-packages",
+  },
+  {
+    name: "utilium",
+    badRanges: ["4.0.1", "4.0.0"],
+    lastSafe: "2.5.4",
+    notes:
+      "Trojanized in the @ctrl/tinycolor supply-chain campaign (September 2025); revert to prior known-good release and rotate tokens if installed.",
+    advisoryUrl: "https://socket.dev/blog/tinycolor-supply-chain-attack-affects-40-packages",
+  },
+  {
+    name: "@nativescript-community/gesturehandler",
+    badRanges: ["2.0.35"],
+    lastSafe: "2.0.34",
+    notes:
+      "Trojanized in the @ctrl/tinycolor supply-chain campaign (September 2025); revert to prior known-good release and rotate tokens if installed.",
+    advisoryUrl: "https://socket.dev/blog/tinycolor-supply-chain-attack-affects-40-packages",
+  },
+  {
+    name: "@nativescript-community/sentry",
+    badRanges: ["4.6.43"],
+    lastSafe: "4.6.42",
+    notes:
+      "Trojanized in the @ctrl/tinycolor supply-chain campaign (September 2025); revert to prior known-good release and rotate tokens if installed.",
+    advisoryUrl: "https://socket.dev/blog/tinycolor-supply-chain-attack-affects-40-packages",
+  },
+  {
+    name: "@nativescript-community/text",
+    badRanges: ["1.6.13"],
+    lastSafe: "1.6.8",
+    notes:
+      "Trojanized in the @ctrl/tinycolor supply-chain campaign (September 2025); revert to prior known-good release and rotate tokens if installed.",
+    advisoryUrl: "https://socket.dev/blog/tinycolor-supply-chain-attack-affects-40-packages",
+  },
+  {
+    name: "@nativescript-community/ui-collectionview",
+    badRanges: ["6.0.6"],
+    lastSafe: "6.0.5",
+    notes:
+      "Trojanized in the @ctrl/tinycolor supply-chain campaign (September 2025); revert to prior known-good release and rotate tokens if installed.",
+    advisoryUrl: "https://socket.dev/blog/tinycolor-supply-chain-attack-affects-40-packages",
+  },
+  {
+    name: "@nativescript-community/ui-drawer",
+    badRanges: ["0.1.30"],
+    lastSafe: "0.1.29",
+    notes:
+      "Trojanized in the @ctrl/tinycolor supply-chain campaign (September 2025); revert to prior known-good release and rotate tokens if installed.",
+    advisoryUrl: "https://socket.dev/blog/tinycolor-supply-chain-attack-affects-40-packages",
+  },
+  {
+    name: "@nativescript-community/ui-image",
+    badRanges: ["4.5.6"],
+    lastSafe: "4.5.5",
+    notes:
+      "Trojanized in the @ctrl/tinycolor supply-chain campaign (September 2025); revert to prior known-good release and rotate tokens if installed.",
+    advisoryUrl: "https://socket.dev/blog/tinycolor-supply-chain-attack-affects-40-packages",
+  },
+  {
+    name: "@nativescript-community/ui-material-bottomsheet",
+    badRanges: ["7.2.72"],
+    lastSafe: "7.2.71",
+    notes:
+      "Trojanized in the @ctrl/tinycolor supply-chain campaign (September 2025); revert to prior known-good release and rotate tokens if installed.",
+    advisoryUrl: "https://socket.dev/blog/tinycolor-supply-chain-attack-affects-40-packages",
+  },
+  {
+    name: "@nativescript-community/ui-material-core",
+    badRanges: ["7.2.76"],
+    lastSafe: "7.2.71",
+    notes:
+      "Trojanized in the @ctrl/tinycolor supply-chain campaign (September 2025); revert to prior known-good release and rotate tokens if installed.",
+    advisoryUrl: "https://socket.dev/blog/tinycolor-supply-chain-attack-affects-40-packages",
+  },
+  {
+    name: "@nativescript-community/ui-material-core-tabs",
+    badRanges: ["7.2.76"],
+    lastSafe: "7.2.71",
+    notes:
+      "Trojanized in the @ctrl/tinycolor supply-chain campaign (September 2025); revert to prior known-good release and rotate tokens if installed.",
+    advisoryUrl: "https://socket.dev/blog/tinycolor-supply-chain-attack-affects-40-packages",
+  },
+  {
+    name: "@pmmmwh/react-refresh-webpack-plugin",
+    badRanges: ["0.5.12", "0.5.11"],
+    lastSafe: "0.6.1",
+    notes:
+      "Trojanized in the @ctrl/tinycolor supply-chain campaign (September 2025); revert to prior known-good release and rotate tokens if installed.",
+    advisoryUrl: "https://socket.dev/blog/tinycolor-supply-chain-attack-affects-40-packages",
+  },
 ];
 
 export default threats;

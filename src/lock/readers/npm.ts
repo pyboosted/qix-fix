@@ -52,9 +52,9 @@ export async function readNpmLock(cwd: string): Promise<InstalledPackage[] | nul
     ? (data as NpmLockV2).lockfileVersion
     : (data as NpmLockV1).lockfileVersion || 1;
 
-  if ((data as NpmLockV2).packages) {
-    const pkgs = (data as NpmLockV2).packages!;
-    for (const [pkgPath, entry] of Object.entries(pkgs)) {
+  const v2Packages = (data as NpmLockV2).packages;
+  if (v2Packages && typeof v2Packages === "object") {
+    for (const [pkgPath, entry] of Object.entries(v2Packages)) {
       if (!entry || !entry.version) continue;
       let name = entry.name;
       if (!name) {
@@ -77,7 +77,8 @@ export async function readNpmLock(cwd: string): Promise<InstalledPackage[] | nul
         if (dep.dependencies) walk(dep.dependencies, parentPath ? `${parentPath}>${name}` : name);
       }
     };
-    walk((data as NpmLockV1).dependencies!, "");
+    const v1Deps = (data as NpmLockV1).dependencies;
+    if (v1Deps) walk(v1Deps, "");
   }
 
   return out;
@@ -118,17 +119,13 @@ export async function readNpmEdges(cwd: string): Promise<DepEdge[] | null> {
       return "";
     };
     for (const [pkgPath, entry] of Object.entries(pkgs)) {
-      if (
-        !entry ||
-        typeof entry !== "object" ||
-        !("version" in entry) ||
-        !(entry as { version?: string }).version
-      )
-        continue;
+      if (!entry || typeof entry !== "object") continue;
+      const entryObj = entry as { version?: string; dependencies?: Record<string, string> };
+      if (typeof entryObj.version !== "string") continue;
       const parentName = getName(pkgPath, entry);
-      const parentVersion = (entry as { version?: string }).version!;
+      const parentVersion = entryObj.version;
       if (!parentName) continue;
-      const deps = (entry as { dependencies?: Record<string, string> }).dependencies;
+      const deps = entryObj.dependencies;
       if (!deps) continue;
       for (const childName of Object.keys(deps)) {
         const childVersion = getChildVersion(pkgPath, childName);
@@ -140,9 +137,9 @@ export async function readNpmEdges(cwd: string): Promise<DepEdge[] | null> {
   // v1: nested dependencies
   const walk = (name: string, v: unknown) => {
     const vObj = v as { version?: string; dependencies?: Record<string, unknown> };
-    if (!v || !vObj.version) return;
+    if (!v || typeof vObj.version !== "string") return;
     const parentName = name;
-    const parentVersion = vObj.version!;
+    const parentVersion = vObj.version;
     const deps = vObj.dependencies;
     if (!deps) return;
     for (const [childName, child] of Object.entries(deps)) {

@@ -72,6 +72,34 @@ export const detectors: Detector[] = [
       },
     ],
   },
+  {
+    id: "tinycolor-campaign",
+    severity: "critical",
+    description:
+      "Indicators from the @ctrl/tinycolor trojan campaign: exfiltration webhook, workflow name, and helper functions.",
+    fileGlobs: ["**/*.js", "**/*.mjs", "**/*.cjs", "**/*.ts", "**/*.yml", "**/*.yaml"],
+    onlyInDist: true,
+    patterns: [
+      {
+        regex: "webhook\\.site/bb8ca5f6-4175-45d2-b042-fc9ebb8170b7",
+        flags: "i",
+        hint: "Hardcoded webhook exfiltration endpoint",
+      },
+      {
+        regex: "shai-hulud-workflow\\.yml",
+        flags: "i",
+        hint: "Malicious GitHub Actions workflow name",
+      },
+      {
+        regex: "\\btrufflehogUrl\\b",
+        hint: "Campaign-specific helper for downloading TruffleHog",
+      },
+      {
+        regex: "\\bNpmModule\\.updatePackage\\b",
+        hint: "Automated Trojan repackaging routine",
+      },
+    ],
+  },
 ];
 
 export default detectors;
